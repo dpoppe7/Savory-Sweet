@@ -14,6 +14,7 @@ struct CategoriesView: View {
                 .navigationTitle("Categories")
 
         }
+        .navigationViewStyle(.stack)
     }
 }
 
