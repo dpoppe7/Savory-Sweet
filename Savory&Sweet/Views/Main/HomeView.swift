@@ -14,7 +14,7 @@ struct HomeView: View {
     var body: some View {
         NavigationView{
             //Text("Home")
-                //.navigationTitle("Home")
+                //.navigationTitle("Home2")
             Text("Searching for \(searchText)")
                             .searchable(text: $searchText, prompt: "Find a recipe")
                             .navigationTitle("Home")
