@@ -20,6 +20,10 @@
 		9CBC3A9F291A139D00DDAD3D /* AddRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC3A9E291A139D00DDAD3D /* AddRecipeView.swift */; };
 		9CBC3AA1291A13AE00DDAD3D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC3AA0291A13AE00DDAD3D /* SettingsView.swift */; };
 		9CBC3AA4291A14DF00DDAD3D /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC3AA3291A14DF00DDAD3D /* TabBarView.swift */; };
+		A502C1C829208098005871FA /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A502C1C729208098005871FA /* WebService.swift */; };
+		A502C1CA2920877C005871FA /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A502C1C92920877C005871FA /* Recipe.swift */; };
+		A502C1CC2920880E005871FA /* RecipeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A502C1CB2920880E005871FA /* RecipeListViewModel.swift */; };
+		A502C1CE292089D4005871FA /* StringSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = A502C1CD292089D4005871FA /* StringSpace.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,11 @@
 		9CBC3A9E291A139D00DDAD3D /* AddRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeView.swift; sourceTree = "<group>"; };
 		9CBC3AA0291A13AE00DDAD3D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9CBC3AA3291A14DF00DDAD3D /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		A502C1C729208098005871FA /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		A502C1C92920877C005871FA /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		A502C1CB2920880E005871FA /* RecipeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewModel.swift; sourceTree = "<group>"; };
+		A502C1CD292089D4005871FA /* StringSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringSpace.swift; sourceTree = "<group>"; };
+		A502C1CF2920A4CB005871FA /* Savory-Sweet-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Savory-Sweet-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +115,7 @@
 		9C462F31291A0F7300F31E41 /* Savory&Sweet */ = {
 			isa = PBXGroup;
 			children = (
+				A502C1CF2920A4CB005871FA /* Savory-Sweet-Info.plist */,
 				9CBC3A96291A110E00DDAD3D /* Views */,
 				9C462F32291A0F7300F31E41 /* Savory_SweetApp.swift */,
 				9C462F36291A0F7800F31E41 /* Assets.xcassets */,
@@ -117,6 +127,10 @@
 		9C462F38291A0F7800F31E41 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				A502C1C92920877C005871FA /* Recipe.swift */,
+				A502C1CB2920880E005871FA /* RecipeListViewModel.swift */,
+				A502C1C729208098005871FA /* WebService.swift */,
+				A502C1CD292089D4005871FA /* StringSpace.swift */,
 				9C462F39291A0F7800F31E41 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -291,7 +305,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A502C1C829208098005871FA /* WebService.swift in Sources */,
+				A502C1CC2920880E005871FA /* RecipeListViewModel.swift in Sources */,
 				9CBC3AA1291A13AE00DDAD3D /* SettingsView.swift in Sources */,
+				A502C1CE292089D4005871FA /* StringSpace.swift in Sources */,
 				9CBC3A9D291A138500DDAD3D /* FavoritesView.swift in Sources */,
 				9CBC3AA4291A14DF00DDAD3D /* TabBarView.swift in Sources */,
 				9CBC3A9B291A137700DDAD3D /* CategoriesView.swift in Sources */,
@@ -299,6 +316,7 @@
 				9CBC3A99291A136900DDAD3D /* HomeView.swift in Sources */,
 				9C462F35291A0F7300F31E41 /* ContentView.swift in Sources */,
 				9C462F33291A0F7300F31E41 /* Savory_SweetApp.swift in Sources */,
+				A502C1CA2920877C005871FA /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +478,8 @@
 				DEVELOPMENT_TEAM = GYFFTV84M9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Savory-Sweet-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -489,6 +509,8 @@
 				DEVELOPMENT_TEAM = GYFFTV84M9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Savory-Sweet-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
