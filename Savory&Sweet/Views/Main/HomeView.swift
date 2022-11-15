@@ -28,11 +28,11 @@ struct HomeView: View {
             List(recipeListVM.recipes, id: \.title) { recipe in
                 Text(recipe.title)
             }.listStyle(.plain)
-              .searchable(text: $searchText)
+              .searchable(text: $searchText, prompt: "Find a recipe")
               .onChange(of: searchText){ value in
                   Task.init {
                       print(value)
-                    if !value.isEmpty &&  value.count > 8 {
+                    if !value.isEmpty &&  value.count > 4 {
                         await recipeListVM.search(name: value)
                     } else {
                         recipeListVM.recipes.removeAll()

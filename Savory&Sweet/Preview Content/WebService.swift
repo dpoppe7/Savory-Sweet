@@ -14,7 +14,7 @@ enum NetworkError: Error {
 
 class Webservice {
     //static let apiKey = "a1ab8e06858a449580e39c0500ba9951"
-    
+    // a67a5241c34f45429f75c2d8a1858a67
     func getRecipes(searchTerm: String) async throws -> [Recipe] {
         var components = URLComponents()
         components.scheme = "https"
@@ -24,7 +24,7 @@ class Webservice {
 //                    URLQueryItem(name: "query", value: searchTerm.trimmed()),
                     URLQueryItem(name: "number", value: "8"),
                     URLQueryItem(name: "query", value: searchTerm),
-                    URLQueryItem(name: "apiKey", value: "a1ab8e06858a449580e39c0500ba9951")
+                    URLQueryItem(name: "apiKey", value: "a67a5241c34f45429f75c2d8a1858a67")
                 ]
         //components.queryItems = [URLQueryItem]()
         //components.queryItems?.append(URLQueryItem(name: "apikey", value: "a1ab8e06858a449580e39c0500ba9951"))
