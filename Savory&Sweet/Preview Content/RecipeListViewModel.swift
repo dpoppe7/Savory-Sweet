@@ -24,6 +24,21 @@ class RecipeListViewModel: ObservableObject {
     
 }
 
+@MainActor
+class RandomRecipeListViewModel: ObservableObject {
+    
+    @Published var recipes: [RecipeViewModel] = []
+    func displayRandom() async {
+        do {
+            let recipes = try await Webservice().getRandomRecipes()
+            self.recipes = recipes.map(RecipeViewModel.init)
+            
+        } catch {
+            print(error)
+        }
+    }
+}
+
 
 struct RecipeViewModel{
 

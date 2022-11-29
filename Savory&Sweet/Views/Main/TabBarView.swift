@@ -14,9 +14,9 @@ struct TabBarView: View {
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
-            CategoriesView()
+            MyRecipesView()
                 .tabItem {
-                    Label("Categories", systemImage: "list.bullet")
+                    Label("My Recipes", systemImage: "list.bullet")
                 }
             FavoritesView()
                 .tabItem {

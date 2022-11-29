@@ -11,24 +11,29 @@ struct HomeView: View {
     //@State private var searchText = ""
     @StateObject private var recipeListVM = RecipeListViewModel()
     @State private var searchText = ""
+    var refreshButton: UIBarButtonItem!
+
+       
     
-    
-//    var body: some View {
-//        NavigationView{
-//            Text("Searching for \(searchText)")
-//                            .searchable(text: $searchText, prompt: "Find a recipe")
-//                            .navigationTitle("Home")
-//
-//
-//        }
-//        .navigationViewStyle(.stack)
-//    }
     var body: some View {
         NavigationView{
+            
             List(recipeListVM.recipes, id: \.title) { recipe in
-                Text(recipe.title)
+                HStack {
+                    AsyncImage(url: recipe.image
+                            , content: { image2 in
+                       image2.resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: 100)
+                     }, placeholder: {
+                        ProgressView()
+                     })
+                        Text(recipe.title)
+                 }
+                //Text(recipe.title)
             }.listStyle(.plain)
               .searchable(text: $searchText, prompt: "Find a recipe")
+            
               .onChange(of: searchText){ value in
                   Task.init {
                       print(value)
@@ -38,12 +43,16 @@ struct HomeView: View {
                         recipeListVM.recipes.removeAll()
                     }
                   }
+                  
               }
               .navigationTitle("Home")
-        }
-        .navigationViewStyle(.stack)
+        //aqui
+        }.navigationViewStyle(.stack)
     }
+
 }
+
+
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {

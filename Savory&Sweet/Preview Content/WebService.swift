@@ -14,7 +14,8 @@ enum NetworkError: Error {
 
 class Webservice {
     //static let apiKey = "a1ab8e06858a449580e39c0500ba9951"
-    // a67a5241c34f45429f75c2d8a1858a67
+    // a67a5241c34f45429f75c2d8a1858a67    
+    
     func getRecipes(searchTerm: String) async throws -> [Recipe] {
         var components = URLComponents()
         components.scheme = "https"
@@ -42,7 +43,33 @@ class Webservice {
         
         let recipeResponse = try? JSONDecoder().decode(RecipeResponse.self, from: data)
         return recipeResponse?.results ?? []
-        
     }
     
+    func getRandomRecipes() async throws -> [Recipe] {
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = "api.spoonacular.com"
+        components.path = "/recipes/random"
+        components.queryItems = [
+//                    URLQueryItem(name: "query", value: searchTerm.trimmed()),
+                    URLQueryItem(name: "number", value: "8"),
+                    URLQueryItem(name: "apiKey", value: "a67a5241c34f45429f75c2d8a1858a67")
+                ]
+        //components.queryItems = [URLQueryItem]()
+        //components.queryItems?.append(URLQueryItem(name: "apikey", value: "a1ab8e06858a449580e39c0500ba9951"))
+        //components.queryItems?.append(URLQueryItem(name: "number", value: "8"))
+        
+        guard let url = components.url else {
+            throw NetworkError.badURL
+        }
+        
+        let (data, response) = try await URLSession.shared.data(from: url)
+        
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+            throw NetworkError.badID
+        }
+        
+        let recipeResponse = try? JSONDecoder().decode(RecipeResponse.self, from: data)
+        return recipeResponse?.results ?? []
+    }
 }

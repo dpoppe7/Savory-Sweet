@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct CategoriesView: View {
+struct MyRecipesView: View {
     var body: some View {
         NavigationView{
-            Text("Categories")
-                .navigationTitle("Categories")
+            Text("My Recipes")
+                .navigationTitle("My Recipes")
 
         }
         .navigationViewStyle(.stack)
@@ -20,6 +20,6 @@ struct CategoriesView: View {
 
 struct CategoriesView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoriesView()
+        MyRecipesView()
     }
 }
