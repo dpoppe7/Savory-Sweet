@@ -26,6 +26,7 @@ class Webservice {
                     URLQueryItem(name: "number", value: "8"),
                     URLQueryItem(name: "query", value: searchTerm),
                     URLQueryItem(name: "apiKey", value: "a67a5241c34f45429f75c2d8a1858a67")
+                    
                 ]
         //components.queryItems = [URLQueryItem]()
         //components.queryItems?.append(URLQueryItem(name: "apikey", value: "a1ab8e06858a449580e39c0500ba9951"))
@@ -55,10 +56,7 @@ class Webservice {
                     URLQueryItem(name: "number", value: "8"),
                     URLQueryItem(name: "apiKey", value: "a67a5241c34f45429f75c2d8a1858a67")
                 ]
-        //components.queryItems = [URLQueryItem]()
-        //components.queryItems?.append(URLQueryItem(name: "apikey", value: "a1ab8e06858a449580e39c0500ba9951"))
-        //components.queryItems?.append(URLQueryItem(name: "number", value: "8"))
-        
+       
         guard let url = components.url else {
             throw NetworkError.badURL
         }
