@@ -11,6 +11,7 @@
 		4631C4D8293AEC6600D82617 /* RecipeItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4631C4D7293AEC6600D82617 /* RecipeItemViewModel.swift */; };
 		4631C4DA293AF4DC00D82617 /* MyRecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4631C4D9293AF4DC00D82617 /* MyRecipeListView.swift */; };
 		4631C4DC293AF8E100D82617 /* RecipeAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4631C4DB293AF8E100D82617 /* RecipeAddViewModel.swift */; };
+		46AFE1EF293B1CE700D01B9D /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AFE1EE293B1CE700D01B9D /* RecipeView.swift */; };
 		9C462F33291A0F7300F31E41 /* Savory_SweetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C462F32291A0F7300F31E41 /* Savory_SweetApp.swift */; };
 		9C462F35291A0F7300F31E41 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C462F34291A0F7300F31E41 /* ContentView.swift */; };
 		9C462F37291A0F7800F31E41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C462F36291A0F7800F31E41 /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		4631C4D7293AEC6600D82617 /* RecipeItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeItemViewModel.swift; sourceTree = "<group>"; };
 		4631C4D9293AF4DC00D82617 /* MyRecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecipeListView.swift; sourceTree = "<group>"; };
 		4631C4DB293AF8E100D82617 /* RecipeAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAddViewModel.swift; sourceTree = "<group>"; };
+		46AFE1EE293B1CE700D01B9D /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
 		9C462F2F291A0F7300F31E41 /* Savory&Sweet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Savory&Sweet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C462F32291A0F7300F31E41 /* Savory_SweetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Savory_SweetApp.swift; sourceTree = "<group>"; };
 		9C462F34291A0F7300F31E41 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				9CBC3AA3291A14DF00DDAD3D /* TabBarView.swift */,
 				9CBC3A98291A136900DDAD3D /* HomeView.swift */,
 				9CBC3A9A291A137700DDAD3D /* MyRecipesView.swift */,
+				46AFE1EE293B1CE700D01B9D /* RecipeView.swift */,
 				4631C4D9293AF4DC00D82617 /* MyRecipeListView.swift */,
 				4631C4D5293AEB5200D82617 /* RecipeItem.swift */,
 				9CBC3A9C291A138500DDAD3D /* FavoritesView.swift */,
@@ -329,6 +332,7 @@
 				4631C4DA293AF4DC00D82617 /* MyRecipeListView.swift in Sources */,
 				9CBC3A9B291A137700DDAD3D /* MyRecipesView.swift in Sources */,
 				9CBC3A9F291A139D00DDAD3D /* AddRecipeView.swift in Sources */,
+				46AFE1EF293B1CE700D01B9D /* RecipeView.swift in Sources */,
 				9CBC3A99291A136900DDAD3D /* HomeView.swift in Sources */,
 				9C462F35291A0F7300F31E41 /* ContentView.swift in Sources */,
 				9C462F33291A0F7300F31E41 /* Savory_SweetApp.swift in Sources */,

@@ -14,6 +14,7 @@ struct RecipeList: Identifiable{
     let description: String
     let ingredients: String
     let directions: String
+    let datePublished: String
     let url : String
     
 }
@@ -26,6 +27,7 @@ extension RecipeList{
             description: "tres lechesss",
             ingredients: "milk, flour",
             directions: "cook",
+            datePublished: "2022-10-08",
             url: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Ftres-leches-cake&psig=AOvVaw1hs2kdO49RvkN_8j20ZgeY&ust=1670121275164000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCNC9kNy03PsCFQAAAAAdAAAAABAE")
     ]
 }

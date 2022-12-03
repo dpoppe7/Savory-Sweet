@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct MyRecipesView: View {
+    @EnvironmentObject var recipeVM: RecipeAddViewModel
+    
     var body: some View {
         NavigationView{
             //Text("My Recipes")
-            MyRecipeListView(recipes: RecipeList.all)
-                .navigationTitle("My Recipes")
+            ScrollView{
+                MyRecipeListView(recipes: recipeVM.recipes)
+                    .navigationTitle("My Recipes")
+            }
+           
                 
         }
         .navigationViewStyle(.stack)
@@ -22,5 +27,6 @@ struct MyRecipesView: View {
 struct CategoriesView_Previews: PreviewProvider {
     static var previews: some View {
         MyRecipesView()
+            .environmentObject(RecipeAddViewModel())
     }
 }

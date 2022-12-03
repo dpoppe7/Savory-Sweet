@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct AddRecipeView: View {
+    @EnvironmentObject var recipeVM: RecipeAddViewModel
     @State private var name: String = ""
     @State private var description: String = ""
     @State private var ingredients: String = ""
     @State private var directions: String = ""
+    
+    //@State private var
     @State private var openRecipe = false
-    @StateObject private var recipeAddListVM = RecipeAddViewModel()
+//    @StateObject private var recipeAddListVM = RecipeAddViewModel()
 
     @Environment(\.dismiss) var dismiss
     
@@ -43,7 +46,8 @@ struct AddRecipeView: View {
 //                }
                 ToolbarItem{
                     NavigationLink(isActive: $openRecipe){
-                        MyRecipeListView(recipes: recipeAddListVM.recipes)
+                        RecipeView(item: recipeVM.recipes.sorted{ $0.datePublished > $1.datePublished}[0])
+                            //.navigationBarBackButtonHidden(true)
                     }label:{
                         Button{
                             saveRecipe()
@@ -70,8 +74,13 @@ struct AddRecipeView_Previews: PreviewProvider {
 }
 extension AddRecipeView{
     private func saveRecipe(){
-        let recipe = RecipeList(name: name, image: "", description: description, ingredients: ingredients, directions: directions, url: "")
-        recipeAddListVM.addRecipe(recipe: recipe)
+        let now = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-mm-dd"
+        let datePublished = dateFormatter.string(from: now)
+        print(datePublished)
+        let recipe = RecipeList(name: name, image: "", description: description, ingredients: ingredients, directions: directions, datePublished: datePublished, url: "")
+        recipeVM.addRecipe(recipe: recipe)
         
     }
 }

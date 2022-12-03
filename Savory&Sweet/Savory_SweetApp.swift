@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
-
 @main
 struct Savory_SweetApp: App {
+    
+    @StateObject var recipesAddVM = RecipeAddViewModel()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(recipesAddVM)
         }
     }
 }
+
+
