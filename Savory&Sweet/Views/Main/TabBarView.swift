@@ -28,7 +28,7 @@ struct TabBarView: View {
                 }
             SettingsView()
                 .tabItem {
-                    Label("Settings", systemImage: "gearshape.2.fill")
+                    Label("About", systemImage: "questionmark.app")
                 }
         }
     }

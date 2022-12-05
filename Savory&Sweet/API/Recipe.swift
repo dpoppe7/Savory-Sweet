@@ -45,3 +45,19 @@ struct RandomRecipe: Decodable {
         case imageType = "imageType"
     }
 }
+
+struct RecipeInfo: Decodable {
+    let id: Int
+    let title: String
+    let image: String
+    let imageType: String
+    let sourceUrl: String
+
+    private enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case title = "title"
+        case image = "image"
+        case imageType = "imageType"
+        case sourceUrl = "sourceUrl"
+    }
+}

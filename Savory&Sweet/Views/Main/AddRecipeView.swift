@@ -46,7 +46,7 @@ struct AddRecipeView: View {
 //                }
                 ToolbarItem{
                     NavigationLink(isActive: $openRecipe){
-                        RecipeView(item: recipeVM.recipes.sorted{ $0.datePublished > $1.datePublished}[0])
+                        RecipeFullView(item: recipeVM.recipes.sorted{ $0.datePublished > $1.datePublished}[0])
                             //.navigationBarBackButtonHidden(true)
                     }label:{
                         Button{

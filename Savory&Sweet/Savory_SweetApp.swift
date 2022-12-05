@@ -13,7 +13,7 @@ struct Savory_SweetApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FrontView()
                 .environmentObject(recipesAddVM)
         }
     }

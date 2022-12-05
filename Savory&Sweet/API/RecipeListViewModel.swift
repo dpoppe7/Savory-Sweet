@@ -25,6 +25,23 @@ class RecipeListViewModel: ObservableObject {
 }
 
 @MainActor
+class RecipeDisplayViewModel: ObservableObject {
+    
+    @Published var recipes: [RecipeURLViewModel] = []
+    
+    func recipeDisplay(id: Int) async {
+        do {
+            //let recipes = try await Webservice().getRecipeInfo(id: id)
+           // self.recipes = recipes.map(RecipeURLViewModel.init)
+            
+        } catch {
+            print(error)
+        }
+    }
+    
+}
+
+@MainActor
 class RandomRecipeListViewModel: ObservableObject {
     
     @Published var recipes: [RandomRecipeViewModel] = []
@@ -79,5 +96,30 @@ struct RandomRecipeViewModel{
     
     var imageType: String {
         recipeVar.imageType
+    }
+}
+
+struct RecipeURLViewModel{
+
+    let recipe: RecipeInfo
+    
+    var id: Int {
+        recipe.id
+    }
+    
+    var sourceUrl: String {
+        recipe.sourceUrl
+    }
+    
+    var title: String {
+        recipe.title
+    }
+    
+    var image: URL? {
+        URL(string: recipe.image)
+    }
+    
+    var imageType: String {
+        recipe.imageType
     }
 }

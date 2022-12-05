@@ -28,6 +28,23 @@ extension RecipeList{
             ingredients: "milk, flour",
             directions: "cook",
             datePublished: "2022-10-08",
+            url: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Ftres-leches-cake&psig=AOvVaw1hs2kdO49RvkN_8j20ZgeY&ust=1670121275164000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCNC9kNy03PsCFQAAAAAdAAAAABAE"),
+        RecipeList(
+            name: "Chocolate cake",
+            image: "http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcSWOjtRJTyt3iHScdM_UazRNQuzKtRH9Fsmn0aHKqGmqhd4mSy4J8CBfqv3BzerJY59",
+            description: "tres lechesss",
+            ingredients: "milk, flour",
+            directions: "cook",
+            datePublished: "2022-10-08",
             url: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Ftres-leches-cake&psig=AOvVaw1hs2kdO49RvkN_8j20ZgeY&ust=1670121275164000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCNC9kNy03PsCFQAAAAAdAAAAABAE")
+        ,
+    RecipeList(
+        name: "Strawberry cake",
+        image: "https://preppykitchen.com/wp-content/uploads/2022/05/Strawberry-Cake-Recipe-Card.jpg",
+        description: "tres lechesss",
+        ingredients: "milk, flour",
+        directions: "cook",
+        datePublished: "2022-10-08",
+        url: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Ftres-leches-cake&psig=AOvVaw1hs2kdO49RvkN_8j20ZgeY&ust=1670121275164000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCNC9kNy03PsCFQAAAAAdAAAAABAE")
     ]
 }

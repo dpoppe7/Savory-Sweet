@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct MyRecipesView: View {
+    //@StateObject var favoritesAdd: RecipeAddViewModel()
     @EnvironmentObject var recipeVM: RecipeAddViewModel
-    
+
     var body: some View {
         NavigationView{
             //Text("My Recipes")
@@ -17,8 +18,6 @@ struct MyRecipesView: View {
                 MyRecipeListView(recipes: recipeVM.recipes)
                     .navigationTitle("My Recipes")
             }
-           
-                
         }
         .navigationViewStyle(.stack)
     }
@@ -28,5 +27,6 @@ struct CategoriesView_Previews: PreviewProvider {
     static var previews: some View {
         MyRecipesView()
             .environmentObject(RecipeAddViewModel())
+            //.environmentObject(RecipeAddViewModel())
     }
 }

@@ -1,13 +1,13 @@
 //
-//  RecipeItem.swift
+//  RecipeFavoriteCard.swift
 //  Savory&Sweet
 //
-//  Created by Karen Carballo on 12/2/22.
+//  Created by Karen Carballo on 12/4/22.
 //
 
 import SwiftUI
 
-struct RecipeItem: View {
+struct RecipeFavoriteCard: View {
     @EnvironmentObject var favoritesAdd: RecipeAddViewModel
     var item: RecipeList
     var body: some View {
@@ -48,26 +48,24 @@ struct RecipeItem: View {
                     .background(LinearGradient(gradient: Gradient(colors: [Color(.gray).opacity(0.3), Color(.gray)]),startPoint: .top, endPoint: .bottom ))
                     .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
                     .shadow(color:Color.black.opacity(0.3), radius: 15, x: 0, y: 10)
-                
                 Button{
-                    favoritesAdd.addRecipe(recipe: item)
+                    favoritesAdd.removeFromFavorites(recipe: item)
                 }label:{
-                    Image(systemName: "heart")
+                    Image(systemName: "heart.fill")
                         .padding(8)
                         .foregroundColor(.red)
                         .background(.white)
                         .cornerRadius(50)
-                         .padding(10)
+                        .padding(10)
                 }
              }
             }
     }
 }
 
-struct RecipeItem_Previews: PreviewProvider {
+struct RecipeFavoriteCard_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeItem(item: RecipeList.all[0])
+        RecipeFavoriteCard(item: RecipeList.all[0])
             .environmentObject(RecipeAddViewModel())
     }
 }
-

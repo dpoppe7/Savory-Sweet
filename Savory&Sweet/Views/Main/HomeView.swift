@@ -13,15 +13,14 @@ struct HomeView: View {
     @StateObject private var recipeListVM2 = RandomRecipeListViewModel()
     @State private var searchText = ""
     var refreshButton: UIBarButtonItem!
-    private var isNotSearch = true;
-       
+    @State var isSearch = false;
     
+   // var recipes: [RecipeList]
     var body: some View {
-        
         NavigationView{
             VStack{
                 //insert text here
-                
+                //DisplaySearch
                 List(recipeListVM.recipes, id: \.title) { recipe in
                     HStack {
                         
@@ -30,10 +29,19 @@ struct HomeView: View {
                            image2.resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(maxWidth: 100)
+                            
                          }, placeholder: {
                             ProgressView()
                          })
                             Text(recipe.title)
+                            .onTapGesture{
+                                NavigationLink(destination: SearchRecipeView(item: recipe.title)){
+                                    Text("aqui")
+                                }
+                            }
+//                        
+//                    
+//                        NavigationLink(destination: SearchRecipeView(recipe: recipe))
                      }
                     //Text(recipe.title)
                 }.listStyle(.plain)
@@ -42,22 +50,39 @@ struct HomeView: View {
                   .onChange(of: searchText){ value in
                       Task.init {
                           print(value)
-                        if !value.isEmpty &&  value.count > 4 {
+                        if !value.isEmpty &&  value.count > 3 {
                             await recipeListVM.search(name: value)
+                            self.isSearch = true
                         } else {
                             recipeListVM.recipes.removeAll()
-                            await recipeListVM2.displayRandom()
+                            self.isSearch = false
+                            //await recipeListVM2.displayRandom()
                         }
                       }
                       
                   }
                   .navigationTitle("Home")
+                ZStack{
+                    if isSearch == false {
+                        VStack{
+                            Image("search-icon")
+                                .resizable()
+                                .scaledToFit()
+                            Text("Type an ingredient \n(More than 8 characters)")
+                                .multilineTextAlignment(.center)
+                                
+                        }
+                        .position(.init(x: 200, y: 0))
+                        .multilineTextAlignment(.center)
+                    }
+                }
             }
            
             
             
            
         //aqui
+            
         }.navigationViewStyle(.stack)
     }
 
@@ -84,15 +109,11 @@ extension HomeView{
             }
             Button("Hi"){
             Task{
-              
+
                 await recipeListVM2.displayRandom()
-                  
+
             }
             }
-
-
-              
-          
         }
     }
 }

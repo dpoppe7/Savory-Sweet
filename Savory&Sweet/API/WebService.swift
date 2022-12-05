@@ -46,6 +46,30 @@ class Webservice {
         return recipeResponse?.results ?? []
     }
     
+//    func getRecipeInfo(id: Int) async throws -> [RecipeInfo] {
+//        var components = URLComponents()
+//        components.scheme = "https"
+//        components.host = "api.spoonacular.com"
+//        components.path = "/recipes/\(id)/information"
+//        components.queryItems = [
+////                    URLQueryItem(name: "query", value: searchTerm.trimmed()),
+//                    URLQueryItem(name: "apiKey", value: "a67a5241c34f45429f75c2d8a1858a67")]
+//
+//
+//        guard let url = components.url else {
+//            throw NetworkError.badURL
+//        }
+//
+//        let (data, response) = try await URLSession.shared.data(from: url)
+//
+//        guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+//            throw NetworkError.badID
+//        }
+//
+////        let recipeResponse = try? JSONDecoder().decode(RecipeInfo.self, from: data)
+////        return recipeResponse?.sourceUrl
+//    }
+    
     func getRandomRecipes() async throws -> [Recipe] {
         var components = URLComponents()
         components.scheme = "https"

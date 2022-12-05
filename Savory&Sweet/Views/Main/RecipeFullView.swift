@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct RecipeView: View {
-    @EnvironmentObject var recipeVM: RecipeAddViewModel
+struct RecipeFullView: View {
+    //@EnvironmentObject var recipeVM: RecipeAddViewModel
     var item: RecipeList
 
     var body: some View {
@@ -27,29 +27,35 @@ struct RecipeView: View {
             }
             .frame(height:300)
             .background(LinearGradient (gradient: Gradient(colors: [Color(.gray).opacity(0.3), Color(.gray)]), startPoint:.top, endPoint: .bottom))
-            VStack(spacing: 30){
+            VStack(spacing: 0){
                 Text(item.name)
                     .font(.largeTitle)
                     .bold()
                     .multilineTextAlignment(.center)
-                VStack(alignment: .leading, spacing: 30){
+                VStack(alignment: .leading, spacing: 0){
                     if !item.description.isEmpty{
                         Text(item.description)
+                            .padding(20)
                     }
                     
                     if !item.ingredients.isEmpty{
-                        VStack(alignment: .leading, spacing: 20){
+                        VStack(alignment: .leading, spacing: 0){
                             Text("Ingredients")
                                 .font(.headline)
+                                //.font(.system(size: 20))
+                                .padding(20)
                             Text(item.ingredients)
+                                .padding(20)
                         }
                     }
                     
                     if !item.directions.isEmpty{
-                        VStack(alignment: .leading, spacing: 20){
+                        VStack(alignment: .leading, spacing: 0){
                             Text("Directions")
                                 .font(.headline)
+                                .padding(20)
                             Text(item.directions)
+                                .padding(20)
                         }
                     }
                 }
@@ -61,8 +67,8 @@ struct RecipeView: View {
     }
 }
 
-struct RecipeView_Previews: PreviewProvider {
+struct RecipeFullView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeView(item: RecipeList.all[0])
+        RecipeFullView(item: RecipeList.all[0])
     }
 }

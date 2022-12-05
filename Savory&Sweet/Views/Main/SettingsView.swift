@@ -10,8 +10,10 @@ import SwiftUI
 struct SettingsView: View {
     var body: some View {
         NavigationView{
-            Text("Settings")
-                .navigationTitle("Settings")
+            Text("Version 1.0 \n\n Created by\n Damaris Poppe and Karen Carballo")
+                .padding(60)
+                .multilineTextAlignment(.center)
+                .navigationTitle("About")
 
         }
         .navigationViewStyle(.stack)
