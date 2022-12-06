@@ -82,8 +82,9 @@ struct HomeView: View {
    if #available(iOS 16.0, *) {
     NavigationStack {
       List(recipeListVM.recipes, id: \.title) { player in
+    
+       NavigationLink(player.title, value: player.id.description)
        
-       NavigationLink(player.title, value:recipeListVM.recipes.description)
         HStack {
          AsyncImage(url: player.image
                     , content: { image2 in
@@ -114,6 +115,20 @@ struct HomeView: View {
       }
      .navigationDestination(for: String.self, destination: TestView.init)
      .navigationTitle("Home")
+     ZStack{
+         if isSearch == false {
+             VStack{
+                 Image("search-icon")
+                     .resizable()
+                     .scaledToFit()
+                 Text("Type an ingredient \n(More than 5 characters)")
+                     .multilineTextAlignment(.center)
+
+             }
+             .position(.init(x: 200, y: 0))
+             .multilineTextAlignment(.center)
+         }
+     }
     }
    }
     else {

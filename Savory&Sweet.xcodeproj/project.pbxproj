@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		462DE877293EE54300746706 /* RecipeParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462DE876293EE54300746706 /* RecipeParams.swift */; };
 		4631C4D6293AEB5200D82617 /* RecipeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4631C4D5293AEB5200D82617 /* RecipeItem.swift */; };
 		4631C4D8293AEC6600D82617 /* RecipeItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4631C4D7293AEC6600D82617 /* RecipeItemViewModel.swift */; };
 		4631C4DA293AF4DC00D82617 /* MyRecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4631C4D9293AF4DC00D82617 /* MyRecipeListView.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		462DE876293EE54300746706 /* RecipeParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeParams.swift; sourceTree = "<group>"; };
 		4631C4D5293AEB5200D82617 /* RecipeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeItem.swift; sourceTree = "<group>"; };
 		4631C4D7293AEC6600D82617 /* RecipeItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeItemViewModel.swift; sourceTree = "<group>"; };
 		4631C4D9293AF4DC00D82617 /* MyRecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecipeListView.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				A502C1CD292089D4005871FA /* StringSpace.swift */,
 				A502C1C92920877C005871FA /* Recipe.swift */,
 				A502C1CB2920880E005871FA /* RecipeListViewModel.swift */,
+				462DE876293EE54300746706 /* RecipeParams.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				4631C4DC293AF8E100D82617 /* RecipeAddViewModel.swift in Sources */,
 				4631C4D6293AEB5200D82617 /* RecipeItem.swift in Sources */,
 				465E8BA1293E6CF60009C2B7 /* TestView.swift in Sources */,
+				462DE877293EE54300746706 /* RecipeParams.swift in Sources */,
 				A502C1C829208098005871FA /* WebService.swift in Sources */,
 				A502C1CC2920880E005871FA /* RecipeListViewModel.swift in Sources */,
 				9CBC3AA1291A13AE00DDAD3D /* SettingsView.swift in Sources */,

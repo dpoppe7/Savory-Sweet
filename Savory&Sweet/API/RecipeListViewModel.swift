@@ -24,21 +24,26 @@ class RecipeListViewModel: ObservableObject {
     
 }
 
+
 @MainActor
 class RecipeDisplayViewModel: ObservableObject {
-    
-    @Published var recipes: [RecipeURLViewModel] = []
-    
-    func recipeDisplay(id: Int) async {
-        do {
-            //let recipes = try await Webservice().getRecipeInfo(id: id)
-           // self.recipes = recipes.map(RecipeURLViewModel.init)
-            
-        } catch {
-            print(error)
-        }
-    }
-    
+
+    @Published var recipes: [RecipeInfoViewModel] = []
+
+      func recipeDisplay(id: Int) async -> RecipeParams{
+        var recipes2 = RecipeParams()
+       do {
+        recipes2 = try await Webservice().getRecipeInfo(id: id)
+        //let recipe = configureRecipe(recipeInfo: responseObject)
+        //self.recipes = recipes
+        
+       } catch {
+        print(error)
+       }
+       print(recipes2)
+       return recipes2
+      }
+     
 }
 
 @MainActor
@@ -99,7 +104,7 @@ struct RandomRecipeViewModel{
     }
 }
 
-struct RecipeURLViewModel{
+struct RecipeInfoViewModel{
 
     let recipe: RecipeInfo
     
